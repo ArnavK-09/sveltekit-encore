@@ -16,7 +16,7 @@ export const Local: BaseURL = "http://localhost:4000";
  * Environment returns a BaseURL for calling the cloud environment with the given name.
  */
 export function Environment(name: string): BaseURL {
-  return `https://${name}-2gkkq.encr.app`;
+  return `https://${name}-{{ENCORE_APP_ID}}.encr.app`;
 }
 
 /**
@@ -27,7 +27,7 @@ export function PreviewEnv(pr: number | string): BaseURL {
 }
 
 /**
- * Client is an API client for the 2gkkq Encore application.
+ * Client is an API client for the {{ENCORE_APP_ID}} Encore application.
  */
 export default class Client {
   public readonly hello: hello.ServiceClient;
@@ -321,7 +321,7 @@ class BaseClient {
     // Add User-Agent header if the script is running in the server
     // because browsers do not allow setting User-Agent headers to requests
     if (typeof window === "undefined") {
-      this.headers["User-Agent"] = "2gkkq-Generated-TS-Client (Encore/v1.46.4)";
+      this.headers["User-Agent"] = "{{ENCORE_APP_ID}}-Generated-TS-Client (Encore/v1.46.4)";
     }
 
     this.requestInit = options.requestInit ?? {};
