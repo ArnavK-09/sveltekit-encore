@@ -82,8 +82,8 @@ export const hello = api(
 <script lang="ts">
 import { client } from "$lib/client";
 
-let input = "";
-let message = "";
+let input = $state("");
+let message = $state("");
 
 const fetchData = async () => {
   const res = await client.hello.get(input);
