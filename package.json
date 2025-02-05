@@ -1,5 +1,5 @@
 {
-  "name": "my-stack",
+  "name": "sveltekit-encore-stack",
   "version": "1.0.0",
   "workspaces": ["apps/*"],
   "scripts": {
