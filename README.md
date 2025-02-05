@@ -37,6 +37,7 @@ bun install
   "scripts": {
     "backend": "Start backend dev server",
     "backend:gen": "Generate frontend API client",
+    "backend:gen:prod": "Generate frontend API client for production",
     "frontend": "Start SvelteKit dev server",
     "frontend:build": "Build production frontend",
     "dev": "Run both servers simultaneously",
