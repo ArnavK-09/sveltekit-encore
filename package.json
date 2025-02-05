@@ -1,0 +1,20 @@
+{
+  "name": "my-stack",
+  "version": "1.0.0",
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "backend": "cd apps/backend && encore run",
+    "backend:gen": "cd apps/backend && encore gen client --output=../frontend/src/lib/client.ts --env=local",
+    "frontend": "cd apps/frontend && bun run dev",
+    "frontend:build": "cd apps/frontend && bun run build",
+    "dev": "bun run backend & bun run frontend",
+    "boot": "bunx concurrently 'bun run backend' 'bun run frontend'",
+    "fmt": "prettier apps --write"
+  },
+  "devDependencies": {
+    "prettier": "3.4.2"
+  },
+  "dependencies": {
+    "prettier-plugin-svelte": "^3.3.3"
+  }
+}
